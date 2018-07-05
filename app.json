@@ -1,0 +1,11 @@
+{
+    "name": "Kitchensink for Line Bot SDK Ruby",
+    "env": {
+        "LINE_CHANNEL_TOKEN": {
+            "description": "line channel access token"
+        },
+        "LINE_CHANNEL_SECRET": {
+            "description": "A secret key for verifying your line channel"
+        }
+    }
+}
