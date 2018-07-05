@@ -27,7 +27,7 @@ def reply_content(event, messages)
   puts res.read_body if res.code != 200
 end
 
-get '/' do
+get '/callback' do
   "It Lives"
 end
 
@@ -93,12 +93,12 @@ def handle_message(event)
     tf = Tempfile.open("content")
     tf.write(response.body)
     reply_text(event, "[MessageType::AUDIO]\nid:#{message_id}\nreceived #{tf.size} bytes data")
-  when Line::Bot::Event::MessageType::File
-    message_id = event.message['id']
-    response = client.get_message_content(message_id)
-    tf = Tempfile.open("content")
-    tf.write(response.body)
-    reply_text(event, "[MessageType::FILE]\nid:#{message_id}\nfileName:#{event.message['fileName']}\nfileSize:#{event.message['fileSize']}\nreceived #{tf.size} bytes data")
+#  when Line::Bot::Event::MessageType::File
+#    message_id = event.message['id']
+#    response = client.get_message_content(message_id)
+#    tf = Tempfile.open("content")
+#    tf.write(response.body)
+#    reply_text(event, "[MessageType::FILE]\nid:#{message_id}\nfileName:#{event.message['fileName']}\nfileSize:#{event.message['fileSize']}\nreceived #{tf.size} bytes data")
   when Line::Bot::Event::MessageType::Sticker
     handle_sticker(event)
   when Line::Bot::Event::MessageType::Location
