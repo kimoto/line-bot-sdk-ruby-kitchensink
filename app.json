@@ -1,5 +1,5 @@
 {
-    "name": "Kitchensink for Line Bot SDK Ruby",
+    "name": "line-bot-sdk-ruby kitchensink",
     "env": {
         "LINE_CHANNEL_TOKEN": {
             "description": "line channel access token"
