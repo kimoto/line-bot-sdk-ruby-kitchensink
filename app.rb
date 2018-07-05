@@ -27,6 +27,10 @@ def reply_content(event, messages)
   puts res.read_body if res.code != 200
 end
 
+get '/' do
+  "It Lives"
+end
+
 post '/callback' do
   body = request.body.read
 
